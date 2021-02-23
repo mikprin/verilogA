@@ -9,7 +9,7 @@ parameter bits = 8, fullscale = 5.0, dly = 0, ttime = 1n;
 input in, clk;
 output [0:bits-1] out;
 electrical in, clk;
-electrical [0:bits-1] out;
+reg [0:bits-1] out;
 real sample, thresh;
 integer result[0:bits-1];
 genvar i;
@@ -30,7 +30,8 @@ analog begin
       end
     end
     for (i = 0; i < bits; i = i + 1) begin
-      V(out[i]) <+ transition(result[i], dly, ttime);
+      // V(out[i]) <+ transition(result[i], dly, ttime);
+
     end
   end
 endmodule
