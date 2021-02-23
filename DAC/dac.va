@@ -1,0 +1,15 @@
+module onebit_dac (in, out);
+input in;
+inout out;
+wire in;
+electrical out;
+
+real x;
+analog begin
+if (in == 0)
+  x = 0.0;
+else
+  x = 3.0;
+  V(out) <+ x;
+end
+endmodule
